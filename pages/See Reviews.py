@@ -51,6 +51,8 @@ if __name__ == '__main__':
         ans = cursor.fetchall()
         cnt = 0
         for feedback in ans:
+            st.text(feedback)
+            st.text(feedback[0])
             #Checking if the feedback contains hate speech and display only if it does not contain hate speech
             h_output = client.detection(body={"document": {"text": feedback[0]}}, params={'detector': 'hate-speech', 'language': 'en'})
             l = (len(h_output.categories) == 0)
