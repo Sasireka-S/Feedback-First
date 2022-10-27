@@ -15,7 +15,7 @@ def add_bg_from_local(image_file):
     """,
     unsafe_allow_html=True
     )
-add_bg_from_local('image8.jpg')
+add_bg_from_local('world.jpg')
 original_title = '<p style="font-family:Georgia; color: whitesmoke ; font-size: 45px;">Welcome to FR World</p>'
 st.markdown(original_title, unsafe_allow_html=True)
 with st.expander('', expanded=True):
