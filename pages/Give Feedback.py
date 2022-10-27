@@ -25,7 +25,7 @@ def add_bg_from_local(image_file):
     unsafe_allow_html=True
     )
 if __name__ == '__main__':
-    add_bg_from_local('image5.jpg')
+    add_bg_from_local('background.jpg')
     img = Image.open("Streamlit.png")
     sqliteConnection = sqlite3.connect('feedbacks.db')
     cursor = sqliteConnection.cursor()
