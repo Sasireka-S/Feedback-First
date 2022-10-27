@@ -55,10 +55,12 @@ if __name__ == '__main__':
             h_output = client.detection(body={"document": {"text": feedback[0]}}, params={'detector': 'hate-speech', 'language': 'en'})
             l = (len(h_output.categories) == 0)
             if(feedback[0] and l):
+                flag = 0
                 text = feedback[0]
                 #Using Emotional traits from NLP API to find emotion and perform sentimental analysis for the emotion
                 output = client.classification(body={"document": {"text": text}}, params={'taxonomy':'emotional-traits','language':'en'})
                 for category in output.categories:
+                    flag = 1
                     cnt += 1
                     op = client.specific_resource_analysis(body={"document": {"text": category.label}},params={'language': 'en', 'resource': 'sentiment'})
                     #Classifying feedback based on sentiment score of the emotion
@@ -72,6 +74,8 @@ if __name__ == '__main__':
                     else:
                         dicti["Positive"].append(feedback[0])
                         pos += 1
+                if(flag == 1):
+                    dicti["Neutral"].append(feedback[0])
         mx = max(neg, neu, pos)
         for x in dicti:
             l = len(dicti[x])
