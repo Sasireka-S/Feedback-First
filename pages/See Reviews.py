@@ -32,7 +32,7 @@ def getConnection():
     return sqliteConnection.cursor()
 
 if __name__ == '__main__':
-    add_bg_from_local('image5.jpg')
+    add_bg_from_local('background.jpg')
     cursor = getConnection()
     options = [x[0] for x in cursor.execute("SELECT DISTINCT e_company from emp") if x[0] != '']
     options = [' ']+options
