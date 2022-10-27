@@ -26,7 +26,6 @@ def add_bg_from_local(image_file):
     )
 if __name__ == '__main__':
     add_bg_from_local('background.jpg')
-    img = Image.open("Streamlit.png")
     sqliteConnection = sqlite3.connect('feedbacks.db')
     cursor = sqliteConnection.cursor()
     #cursor.execute("DROP TABLE emp")
