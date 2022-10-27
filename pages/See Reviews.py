@@ -74,7 +74,7 @@ if __name__ == '__main__':
                     else:
                         dicti["Positive"].append(feedback[0])
                         pos += 1
-                if(flag == 1):
+                if(flag == 0):
                     dicti["Neutral"].append(feedback[0])
         mx = max(neg, neu, pos)
         for x in dicti:
