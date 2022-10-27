@@ -72,7 +72,6 @@ if __name__ == '__main__':
                     else:
                         dicti["Positive"].append(feedback[0])
                         pos += 1
-                st.text(dicti)
         mx = max(neg, neu, pos)
         for x in dicti:
             l = len(dicti[x])
